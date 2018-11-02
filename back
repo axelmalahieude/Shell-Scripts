@@ -1,0 +1,22 @@
+#!/bin/bash
+
+function backfunc(){
+	cd ..
+
+	if [ "$#" -eq 0 ]; then
+		return
+	fi
+
+	NDIR=$1
+
+	if [ "$NDIR" -eq 1 ]; then
+		return
+	elif [ "$NDIR" -eq 2 ]; then
+		cd ..
+	elif [ "$NDIR" -eq 3 ]; then
+		cd ../..
+	elif [ "$NDIR" -eq 4 ]; then
+		cd ../../
+	fi
+}
+alias back='backfunc'

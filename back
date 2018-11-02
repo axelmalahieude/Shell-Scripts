@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# USAGE: back [number]
+# Traverses up n directories;
+# Example: back is equivalent to cd ..	back 2 is equivalent to cd ../..
+
 function backfunc(){
 	cd ..
 

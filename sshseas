@@ -1,0 +1,9 @@
+#! /bin/sh
+SERVER=$1
+
+if [ -z "$SERVER" ]
+then
+	SERVER=6 # default is 7
+fi
+
+sshpass -p "$SEAS" ssh -Y "malahieu@lnxsrv0$SERVER.seas.ucla.edu"

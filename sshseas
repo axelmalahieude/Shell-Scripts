@@ -1,7 +1,11 @@
 #! /bin/sh
+
+# Shortcut for SSH connection to the UCLA SEASNet server.
+# Usage: sshseas [server]
+
 SERVER=$1
 
-if [ -z "$SERVER" ]
+if [ -z "$SERVER" ] # server number to connect to
 then
 	SERVER=6 # default is 7
 fi

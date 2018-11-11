@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Combines cd and mv to cd into the directory you moved something into
+
+function cdmv(){
+	FILE=$1
+	DIR=$2
+	mv $FILE $DIR
+	cd $DIR
+}
+alias cv='cdmv'

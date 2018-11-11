@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Resize the terminal window to 80x43
+
+printf '\e[8;43;80t'

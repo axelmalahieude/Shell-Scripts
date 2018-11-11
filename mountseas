@@ -1,0 +1,4 @@
+#! /bin/sh
+
+gio mount sftp://malahieu@lnxsrv06.seas.ucla.edu
+

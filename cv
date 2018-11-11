@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Combines cd and mv to cd into the directory you moved something into
+# Not thoroughly tested; need to add -r option for directories
 
 function cdmv(){
 	FILE=$1

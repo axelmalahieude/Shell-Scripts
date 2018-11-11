@@ -1,7 +1,7 @@
 #! /bin/sh
 
-# Shortcut for SSH connection to the UCLA SEASNet server.
 # Usage: sshseas [server]
+# Shortcut for SSH connection to the UCLA SEASNet server.
 
 SERVER=$1
 
@@ -10,4 +10,4 @@ then
 	SERVER=6 # default is 7
 fi
 
-sshpass -p "$SEAS" ssh -Y "malahieu@lnxsrv0$SERVER.seas.ucla.edu"
+sshpass -p "$SEAS" ssh -Y "$SEAS_UN@lnxsrv0$SERVER.seas.ucla.edu"

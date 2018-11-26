@@ -4,9 +4,9 @@ that they make a big difference. I also made them for the experience of learning
 
 Current scripts:
 1. `back`: Same functionality as `cd ..`, but you can choose how many directories to go up by (e.g. `back 2` = `cd ../..`)
-2. `cv`: Combines cd and mv into one command
+2. `cv`: Combines cd and mv into one command. Currently a work in progress.
 3. `fs`: Fixes a strange issue with my mouse's scrolling being inverted whenever I plug it in. Executes a series of xinput 
-   commands to return scrolling to its proper settings.
-4. `mountseas`: Mount the remote school Linux server to my machine
+   commands to return scrolling to its proper settings. (fs = fix scrolling)
+4. `mountseas`: Mount the remote school Linux server to my machine. Enables access to server files via GUI file explorer
 5. `sshseas`: SSH into the remote school Linux server with a much shorter command
 6. `resize`: Resize my terminal window to 80x43 without having to use my mouse

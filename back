@@ -5,22 +5,22 @@
 # Example: back is equivalent to cd ..	back 2 is equivalent to cd ../..
 
 function backfunc(){
+	NDIR=0
+
+	# Do nothing if argument is 0 or negative
+	if [ $# -eq 0 ]; then
+		let NDIR=1
+	elif [ "$#" -gt "1" ]; then
+		echo "USAGE: back [number] (default: 1)"
+		return
+	else
+		NDIR=$1
+	fi
+
 	cd ..
-
-	if [ "$#" -eq 0 ]; then
-		return
-	fi
-
-	NDIR=$1
-
-	if [ "$NDIR" -eq 1 ]; then
-		return
-	elif [ "$NDIR" -eq 2 ]; then
+	while [ "$NDIR" -gt "1" ]; do
 		cd ..
-	elif [ "$NDIR" -eq 3 ]; then
-		cd ../..
-	elif [ "$NDIR" -eq 4 ]; then
-		cd ../../
-	fi
+		let NDIR=NDIR-1
+	done
 }
 alias back='backfunc'

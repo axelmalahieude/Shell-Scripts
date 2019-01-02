@@ -7,7 +7,7 @@ SERVER=$1
 
 if [ -z "$SERVER" ] # server number to connect to
 then
-	SERVER=6 # default is 7
+	SERVER=6 # default is 6
 fi
 
 sshpass -p "$SEAS" ssh -Y "$SEAS_UN@lnxsrv0$SERVER.seas.ucla.edu"

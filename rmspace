@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Removes spaces from all files in the current directory
+
+FILES=`ls -1`
+IFS=$'\n'
+for FILE in $FILES; do
+	NEWNAME=`echo $FILE | tr -d "\ "`
+	if [ ! -e $NEWNAME ]; then
+		mv $FILE $NEWNAME
+	fi
+done

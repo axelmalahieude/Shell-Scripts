@@ -1,0 +1,3 @@
+#! /bin/bash
+
+scp -r $1 $SEAS_UN@lnxsrv09.seas.ucla.edu:~/$2

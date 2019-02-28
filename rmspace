@@ -1,12 +1,45 @@
 #! /bin/bash
 
 # Removes spaces from all files in the current directory
+# Usage: rmspace [-r]
+# Optional argument: -r, recurse through each subdirectory and remove spaces
+#		from files in those directories as well
 
-FILES=`ls -1`
-IFS=$'\n'
-for FILE in $FILES; do
-	NEWNAME=`echo $FILE | tr -d "\ "`
-	if [ ! -e $NEWNAME ]; then
-		mv $FILE $NEWNAME
-	fi
-done
+function rmspaces(){
+	FILES=`ls -1`
+	IFS=$'\n'
+	for FILE in $FILES; do
+		NEWNAME=`echo $FILE | tr -d "\ "`
+		if [ ! -e $NEWNAME ]; then
+			mv $FILE $NEWNAME
+		fi
+	done
+}
+
+function rmspaces_recursive(){
+	rmspaces
+	for ENTRY in `ls -1`; do
+		if [ -d $ENTRY ]; then
+			cd $ENTRY
+			rmspaces_recursive
+		fi
+	done
+}
+
+# No arguments, just work in current directory
+if [ -z $1 ]; then
+	rmspaces
+	exit
+fi
+
+# Recursive, work in all subdirectories too
+if [ $1 == "-r" ]; then
+	rmspaces_recursive
+	exit
+fi
+
+echo "Bad argument: $1"
+exit 1
+
+
+

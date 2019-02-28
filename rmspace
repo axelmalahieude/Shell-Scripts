@@ -6,7 +6,7 @@
 #		from files in those directories as well
 
 function rmspaces(){
-	FILES=`ls -1`
+	FILES=`ls -a -1`
 	IFS=$'\n'
 	for FILE in $FILES; do
 		NEWNAME=`echo $FILE | tr -d "\ "`

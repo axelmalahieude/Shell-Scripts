@@ -3,6 +3,11 @@
 # Make a backup of my Documents folder as a tar file
 # Dump the file into my Google Drive automatically (I use
 # 	google-drive-ocamlfuse to sync my Drive to my ~/Desktop/Google folder)
+#
+# Added to crontab to run daily:
+#		crontab -u axel -e with prefix 0 22 * * * (daily at 10 pm)
+# Added to anacron to run if computer was off/sleep at scheduled time:
+#		sudo ln -s ~/bin/backup /etc/cron.daily
 
 DATE=$(date +%F-%H:%M)
 NAME="documents_backup_$DATE.tar.gz"

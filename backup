@@ -1,0 +1,32 @@
+#! /bin/sh
+
+# Make a backup of my Documents folder as a tar file
+# Dump the file into my Google Drive automatically (I use
+# 	google-drive-ocamlfuse to sync my Drive to my ~/Desktop/Google folder)
+
+DATE=$(date +%F-%H:%M)
+NAME="documents_backup_$DATE.tar.gz"
+
+SOURCE='/home/axel/Documents'
+SNAP="$SOURCE/tar_snapshot" # snapshot for --listing-incremental
+DESTINATION="/home/axel/Desktop/Google/Backups/documents"
+
+# Keep incremental backups only up to 7 days (approx)
+DOM=$(date +%d) # day of month
+let "TEST = $DOM % 7"
+if [ $TEST -eq 0 ]; then
+	mkdir $DESTINATION/tmp
+	mv $DESTINATION/documents_backup* $DESTINATION/tmp
+	rm $SNAP
+fi
+
+# --force-local: allows use of ':' in tar file name (for future use)
+# -p: preserve permissions
+# -czvf: standard compression (gz) flags
+# --listed-incremental: allows incremental backups each time a new one is made
+tar --force-local --listed-incremental=$SNAP -cpzvf $DESTINATION/$NAME $SOURCE
+
+# Cleanup prior backups
+if [ -d $DESTINATION/tmp ]; then
+	rm -rf $DESTINATION/tmp
+fi

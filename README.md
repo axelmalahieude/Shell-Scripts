@@ -10,5 +10,5 @@ Current scripts:
 5. `sshseas`: SSH into the remote school Linux server with a much shorter command
 6. `scpseas`: scp a file to the remote school Linux server without typing it out
 6. `resize`: Resize my terminal window to 80x43 without having to use my mouse
-7. `rmspace`: Removes all spaces from all filenames in a directory. This was more of a one-time issue I had, but you never know when it'll happen again.
-8. `backup`: Back up my `~/Documents` directory. This script is run daily with `cron`/`anacron`, and backs up my files by tarring the directory and uploading that `tar.gz` file into my Google Drive.
+7. `rmspace`: Removes all spaces from all filenames in a directory. This was more of a one-time issue I had, but you never know when it'll happen again. Currently only works for the current directory; need to add `-r` functionality.
+8. `backup`: Back up my `~/Documents` directory. This script is to be run daily with `cron`/`anacron`, and backs up my files by tarring the directory and uploading that `tar.gz` file into my Google Drive. (inactive)

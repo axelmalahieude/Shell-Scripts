@@ -12,9 +12,9 @@
 DATE=$(date +%F-%H:%M)
 NAME="documents_backup_$DATE.tar.gz"
 
-SOURCE='/home/axel/Documents'
+SOURCE="/home/axel/Documents"
 SNAP="$SOURCE/tar_snapshot" # snapshot for --listing-incremental
-DESTINATION="/home/axel/Desktop/Google/Backups/documents"
+DESTINATION=`mktemp -d`
 
 # Keep incremental backups only up to 7 days (approx)
 DOM=$(date +%d) # day of month
@@ -31,7 +31,10 @@ fi
 # --listed-incremental: allows incremental backups each time a new one is made
 tar --force-local --listed-incremental=$SNAP -cpzvf $DESTINATION/$NAME $SOURCE
 
+# Upload file to Google Drive
+drive upload --file $DESTINATION/$NAME --parent $GOOGLE_DRIVE_BACKUP_FOLDER
+
+# Remove the previous backup from Google Drive
+drive 
+
 # Cleanup prior backups
-if [ -d $DESTINATION/tmp ]; then
-	rm -rf $DESTINATION/tmp
-fi

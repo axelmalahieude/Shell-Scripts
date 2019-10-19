@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# Adapted from https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i
+# Used to convert heic picture format to jpg (for hi-res pictures taken on iPhone)
+# Unfinished
+
+for file in *.heic
+do
+	eif-convert $file ${file/%.heic/.jpg}
+done

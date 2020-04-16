@@ -12,3 +12,4 @@ Current scripts:
 6. `resize`: Resize my terminal window to 80x43 without having to use my mouse
 7. `rmspace`: Removes all spaces from all filenames in a directory. This was more of a one-time issue I had, but you never know when it'll happen again. `-r` enables recursive visitation of subdirectories.
 8. `backup`: Back up my `~/Documents` directory. This script is to be run daily with `cron`/`anacron`, and backs up my files by tarring the directory and uploading that `tar.gz` file into my Google Drive. (inactive)
+8. `update-vscode`: Update or install Visual Studio Code with a single command

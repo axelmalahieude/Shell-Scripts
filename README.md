@@ -8,3 +8,4 @@ Current scripts:
 3. `fs`: Fixes a strange issue with my mouse's scrolling being inverted whenever I plug it in using `xinput` (fs = fix scrolling)
 6. `resize`: Resize terminal window
 7. `rmspace`: Removes all spaces from all filenames in a directory. This was more of a one-time issue I had, but you never know when it'll happen again. `-r` enables recursive visitation of subdirectories.
+8. `update-vscode`: Update or install Visual Studio Code

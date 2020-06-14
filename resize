@@ -3,7 +3,7 @@
 # Resize the terminal window to 80x43, or 80x24 if -s was specified (-s for small)
 
 
-if [ $1 == "-s" ]; then
+if [ "$1" = "-s" ]; then
 	printf '\e[8;24;80t'
 	exit
 fi

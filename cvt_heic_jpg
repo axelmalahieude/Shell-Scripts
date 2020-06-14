@@ -6,5 +6,5 @@
 
 for file in *.heic
 do
-	eif-convert $file ${file/%.heic/.jpg}
+	heif-convert $file ${file/%.heic/.jpg}
 done

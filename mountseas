@@ -1,6 +1,0 @@
-#! /bin/sh
-
-# Mounts remote server to system to easily transfer files
-
-gio mount sftp://$SEAS_UN@lnxsrv06.seas.ucla.edu
-

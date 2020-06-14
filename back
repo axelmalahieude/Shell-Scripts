@@ -3,7 +3,6 @@
 # USAGE: back [number] (default: 1)
 # Traverses up n directories;
 # Example: back is equivalent to cd ..	back 2 is equivalent to cd ../..
-
 function backfunc(){
 	NDIR=0
 

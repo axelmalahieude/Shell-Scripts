@@ -1,0 +1,4 @@
+#! /bin/bash
+
+convert *.JPG -auto-orient -page letter pictures.pdf
+echo "Outputted pictures.pdf"

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+feh --auto-rotate --zoom 25 $1

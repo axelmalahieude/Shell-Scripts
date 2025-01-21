@@ -1,0 +1,9 @@
+#! /bin/bash
+
+LIST=""
+for pdf in "$@"; do
+  LIST="${LIST} ${pdf}"
+done
+
+pdfunite $LIST merged.pdf
+echo "Outputted merged.pdf"
